@@ -1,27 +1,194 @@
 <!DOCTYPE html >
 <html>
     <head> 
+	<script> 
+	
+	//function validate
+	function checkFirstName()
+	{
+	var FirstName = document.getElementById("FirstName").value;
+	var rel=/^[A-Za-z|s|'-] {2,10}$1/;
+	if (rel.text(FirstName))//test input
+	document.getElementById("FirstNamePrompt").style.color="green";
+	document.getElementById ("FirstNamePrompt").innerHTNL="<strong>"valid"</strong>"
+	return true;
+	}
+	else
+	{
+	document.getElementById ("FirstNamePrompt").style.color="red";
+		document.getElementById ("FirstNamePrompt").innerHTNL="<strong>"Enter your name"</strong>"
+		return false;
+		
+		
+
+	
+	}
+	
+	
+	function validateForm() {
+  var x = document.forms["myForm"]["FirstName"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+
+var firstname = document.getElementById("FirstName");
+
+firstname.addEventListener("input", function (event) {
+  if (firstname.validity.typeMismatch) {
+    firstname.setCustomValidity("I expect first name, darling!");
+  } else {
+    firstname.setCustomValidity("");
+  }
+});
+	</script>
+	<style type="text/css"> body {
+
+ margin-top:0px;
+padding:0px;
+width:100%;
+height:100%;
+margin-auto;
+font-family:areal;}
+
+#header {
+width:100%;
+height:100%;
+background-color: #ccccff;
+text-align:center;}
+
+#wrapper{
+width:600px;
+height:auto;
+margin:0 px auto;}
+
+#main  {
+height:300px;}
+#footer{height:40px;
+border-top:1px solid gray; text-align:center; font-size:14px;}
+
+ #main img
+{width:1350px;
+height:300px;
+border:1px solid gray;
+}
+
+ #navigation{font-size:18px;
+margin-top:-100px;
+margin-left:100px;}
+
+#navigation ul li
+{list-style-type:none;
+padding: 3px 5px 3px 5px;
+font-size:18px;
+}
+
+ #navigation a
+{color: solid black;
+text-declaration:none;}
+
+ #table1{
+	 padding:150px;
+width:1000px;
+height:250px;
+table-layout:fixed;}
+#table1 td h3
+{text-align:center;
+font-family:pristina;
+font-size:20px;}
+#table1 td {background:#d8d8d8;
+font-size:16px;
+padding:10px;
+border-radius:10px;
+box-shadow: 0px 0px 10px #000;}
+
+#main h2
+{width:300px;
+text-align:center;
+padding: 30px;
+	padding:10px 10px 10px 10px;
+font-size:30px;
+font-family:pristina;
+}
+
+p{
+	font-size:25px;
+}
+form { margin:0 auto; width:400px; padding 1em; border:1px solid gray;
+border-radius 1em;
+input {font: 1em sans-serif;width:300px;}
+.button{margin:auto; width:50px}
+/*center the form*/
+
+
+}
+</style>
+
 	     <title>Bass Tutorial </title>
 <meta name="bass tutorial" content = "bass masterclass/">
 <meta name ="online learning" content="Courses, Tutorials"/>
 <meta name ="Julia Dunaeva" content ="Julia"/>
-<link rel="stylesheet" href="mysite.css"/>
 
     </head>
 	
 	<body> 
-	     <div id="logo"> <img src ="data:image/jpeg;base64,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" width=200px/> </div> 
 	
-	<div id="header">Bass Turorial <h1>Bass Tutorial</h1></div>
+	
+	<div id="header">Bass Turorial <h1>Bass Tutorial</h1><br><br></div> <!--Header-->
 	<div id="navigation"><h3>Navigation</h3>
 	          <ul><li>Home</li><li>About</li><li>Contact</li></ul></div>
-	<div id="wrapper"> Wrapper</div>
+	<div id="wrapper"> </div>
 	<div id="main"> <img src="http://wp.readingkingdom.com/wp-content/uploads/2011/06/musical_notes.jpg" height="300px" width="800px"/>
-	    <h2>Learn from a master and transform your playing</h2>
+	    <center><h2>Learn from a master and transform your playing</h2></center>
 		<p>“..Most people i worked with appreciate my style because my approach to playing live is this simple-
-		I just tell myself that each song is alive,respect it..”</p></div>
-	     
+		I just tell myself that each song is alive,respect it..”</p>
+<br>		</div>
+	     <br><br><br><br>
+	<table id="table1"cellspacing="40"><center>
+	<tr> 
+	<td> <h3>Beginner</h3>Tuning your bass, using harmonics, 
+	Intonation, ear training, tone development, developing speed,
+	bass lives, band stand rock, slow blues, blues shuffle,
+	slow reggae, r&b. </td>
+	<td><h3>Intermedia 
+</h3>Slapping, slides, bass solo, rhytm and blues, rock, jazz, pop,
+ jam, classic 80’s pop grove, 1-6-2-5 progression.</td>
+ <td><h3>Advance
+</h3>Slaps& slides &octaves, using space and simplicy,, stocatto, attitude, major minor, descenting F minor scale, Bossa Nova,
+ bass accompaniment, scatting, 2-5-1 walking, soloing 2-5-1, flare.</td>
+	</tr></center>
+	</table>
 	
-	<div id="footer">Footer</div> &copy.2019 All rights Reserved
+	<center><h4>Register for  Bass tutorial<h4><center>
+	<form name="myForm" onsubmit="return validateForm()"method="post">
+	First name:<br>
+	<input id="FirstName" type="text"  name="First name" required>
+	</br>
+	Last name: <br>
+	<input type="text" name="Last name" required>
+	<br>
+	Phone: <br>
+		<input type="text" name="phone" required>
+		<br><br>
+		<section class="Level">
+		<span>What level do you choose?</span>
+		<br>
+		<label for="beginner">Beginner</label>
+		<input id="beginner" name="level" type="checkbox" value="beginner">
+		<label for="intermedia">Intermedia</label>
+		<input id="intermedia" name="level" type="checkbox" value="intermedia">
+		<label for="advance">Advance</label>
+		<input id="advance" name="level" type="checkbox" value="advance">
+		</form>
+		<form>
+		<tr><br>
+		            <td class="button" id="button" colspan="3"><span class="button" onclick="register();">Register Now</span></td></tr>
+					<span id="Register now"&nbsp;>
+					</span>
+					</form>
+		<br></br>
+		<input type="submit" value="submit">
+	<div id="footer">&copy.2019 All rights Reserved</div> 
 	</body>
 </html>
